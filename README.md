@@ -13,12 +13,11 @@ make -f Makefile.$(your-platform) CROSS_COMPILE=$(if-you-need)
 #### 使用方法
 ```shell
 #将编译完成的或预编译的二进制文件添加至PATH环境变量中。
-
 #对于Linux:
 source ./setenv.sh
-
 #对于Windows:
 .\setenv.bat
 ```
+　　请查看[Wiki](https://github.com/JunASAKA/Android-OperSys-Kits/wiki/)以了解更多使用方法。  
 
 **@浅香ジュン 中国标准时间2020年09月30日**
