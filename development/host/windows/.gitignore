@@ -1,0 +1,14 @@
+*.sln
+*.vcproj*
+*.aps
+usb/api.*
+usb/Debug
+usb/Release
+usb/api/obj*
+usb/api/*.log
+usb/api/*.wrn
+usb/adb_winapi_test/obj*
+usb/adb_winapi_test/*.log
+usb/winusb/obj*
+usb/winusb/*.log
+usb/winusb/*.wrn

@@ -1,0 +1,31 @@
+# Do not compile fastboot/adb
+# which need usb subsystem not compatible with cygwin
+
+UNAME = $(shell uname -o)
+GCCVERSION = $(shell $(CROSS_COMPILE)gcc -v)
+.PHONY:all
+all:
+	@echo "Building for $(UNAME)"
+	@echo "$(GCCVERSION)"
+	cd external/zlib/ && make -j4 && make install && make clean
+	cd external/pcre/ && make -j4 && make install && make clean
+	cd external/libsepol/ && make -j4 && make install && make clean
+	cd system/core/libmincrypt/ && make -j4 && make install && make clean
+	cd external/libselinux/ && make -j4 && make install && make clean
+	cd external/sepolicy/ && make -j4 && make install && make clean
+	cd system/core/libsparse/ && make -j4 && make install && make clean
+	cd system/core/mkbootimg/ && make -j4 && make install && make clean
+	cd system/core/cpio/ && make -j4 && make install && make clean
+	cd system/core/libzipfile/ && make -j4 && make install && make clean
+	cd system/extras/ext4_utils/ && make -j4 && make install && make clean
+	#cd prebuild/ && make install
+
+.PHONY:clean
+clean:
+	cd external/zlib/ && make clean
+	cd system/core/libmincrypt/ && make clean
+	cd system/core/libsparse/ && make clean
+	cd system/core/mkbootimg/ && make clean
+	cd system/core/cpio/ && make clean
+	cd system/core/libzipfile/ && make clean
+	cd system/extras/ext4_utils/ && make clean
